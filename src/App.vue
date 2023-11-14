@@ -13,10 +13,6 @@ import ImageDisplay from './components/ImageDisplay.vue';
     <div class="row">
       <div class="six columns">  
         <ImageDisplay/>
-        <div class="btns">
-         <button id="Random">Random</button>
-         <button id="download">Download</button>
-        </div>
       </div>
       <div class="six columns">
         <ImageGen/>
@@ -27,11 +23,5 @@ import ImageDisplay from './components/ImageDisplay.vue';
 </template>
 
 <style scoped>
-button{
-  margin: 20px 0;
-}
-button[id=Random]{
-  margin-right: 20px;
-}
 
 </style>

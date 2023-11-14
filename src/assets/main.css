@@ -12,6 +12,6 @@ body{
   font-weight: normal;
 }
 .container{
-  width: 95%;
+  width: 99% !important;
 }
 

@@ -10,8 +10,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "merge-images": "^2.0.0",
     "pinia": "^2.1.7",
-    "sharp": "^0.32.6",
     "vue": "^3.3.4"
   },
   "devDependencies": {
