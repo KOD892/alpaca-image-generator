@@ -28,9 +28,9 @@ watchEffect(() => {
 function merge(){
    let blob;
    mergeImages([
-   leg.value.src,
    bg.value.src,
    neck.value.src,
+   leg.value.src,
    ears.value.src,
    hair.value.src,
    accessory.value.src,
