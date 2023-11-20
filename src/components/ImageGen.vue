@@ -27,11 +27,13 @@ onMounted(()=>{
 </script>
 <template>
     <div class="container">
-        <div class="controllers">
+        <div class="controllers row">
+            <div class="twelve columns">
             <h4>Accessorize the ALPACA</h4>
             <input :class="currentAccessory==k?'selected':''" @click="onClickAccessory($event)" v-for="(k,index) in keys" :key="index" type="button" :value="k">
+            </div>
         </div>            
-        <div class="options">
+        <div class="options twelve columns ">
             <h4>Styles</h4>
             <input :class="currentStyle==a?'selected':''" @click="onClickStyle($event)" v-for="(a,index) in store.accessories[currentAccessory]" :key="index" type="button" :value="a">
         </div>
@@ -40,12 +42,14 @@ onMounted(()=>{
 
 <style scoped>
 input[type=button]{
-    margin:1.2rem;
-    border: 1px solid #00fcda;
-    border-radius: 20px;
+    margin:.9rem;
+    border-radius: 18px;
 }
 .selected{
-    background-color: #00fcda;
+    background-color: #222;
+    color: #fff;
+}
+.selected:focus , .selected:hover{
     color: #fff;
 }
 </style>

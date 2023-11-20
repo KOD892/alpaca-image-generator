@@ -5,6 +5,7 @@ import mergeImages from 'merge-images';
 const store = useAlpacaStore();
 
 const image = ref(null)
+const leg = ref(null)
 const neck = ref(null);
 const ears = ref(null);
 const hair = ref(null);
@@ -27,6 +28,7 @@ watchEffect(() => {
 function merge(){
    let blob;
    mergeImages([
+   leg.value.src,
    bg.value.src,
    neck.value.src,
    ears.value.src,
@@ -94,6 +96,9 @@ function setSrc(url){
      case "backgrounds":
         bg.value.src = url
         break;
+     case "leg":
+        leg.value.src = url
+        break;  
   default:
     
     break;
@@ -114,6 +119,7 @@ function dataURItoBlob(dataURI) {
     <div class="main">
       <div ref="image" class="img">
         <img ref="bg" src="../assets/alpaca/backgrounds/darkblue50.png" id="backgrounds" alt="">
+        <img ref="leg" src="../assets/alpaca/leg/default.png" id="leg" alt="">
         <img ref="neck" src="../assets/alpaca/neck/default.png" id="neck" alt="">
         <img ref="ears" src="../assets/alpaca/ears/default.png" id="ears" alt="">
         <img ref="hair" src="../assets/alpaca/hair/default.png" id="hair" alt="">
@@ -125,20 +131,20 @@ function dataURItoBlob(dataURI) {
     </div>
     <img ref="merged" id="merged"/>
     <div class="btns">
-         <button @click="genRandom"  id="Random">Random</button>
+         <button class="button" @click="genRandom"  id="Random">Random</button>
          <div class="button" @click="merge" id="download">Download</div>
     </div>
 </template>
 <style scoped>
-.main{
-    height: 60dvh;
-    position: relative;
+.img{
+   min-height: 330px;
+   position: relative;
 }
 img{
-    max-width: 60dvh;
+    max-width:100%;
     position: absolute;
-    bottom: 0;
-    left: -5%;
+    top: 0;
+    box-shadow: 8px 8px 8px 2px rgba(212, 212, 212, 0.2);
 }
 button{
   margin: 20px 0;
