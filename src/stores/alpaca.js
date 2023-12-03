@@ -43,7 +43,7 @@ actions:{
     let keys = Object.keys(this.accessories)
     keys.forEach(k=>{
        if(el.id==k){
-        el.src = '/src/assets/alpaca/'+k+'/'+this.accessories[k][Math.floor(Math.random()*this.accessories[k].length)]+'.png'
+        el.src = this.url.production+'/alpaca/'+k+'/'+this.accessories[k][Math.floor(Math.random()*this.accessories[k].length)]+'.png'
       }   
     })
   }
