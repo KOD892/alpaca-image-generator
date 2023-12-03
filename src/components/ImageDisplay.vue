@@ -71,7 +71,7 @@ function genRandom(){
 
 }
 function getSrc(accessory,style){
-    return store.url.developement+'/alpaca/'+accessory+'/'+style+'.png'
+    return store.url.production+'/alpaca/'+accessory+'/'+style+'.png'
 }
 function setSrc(url){
     switch (store.currentAccessory) {
