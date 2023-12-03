@@ -20,7 +20,7 @@ watchEffect(() => {
   if (neck.value) {
      let url = getSrc(store.currentAccessory,store.currentStyle);
      mergedSrc.value = merged.value.src;
-     setSrc('/src/assets'+url);
+     setSrc(url);
   } else {
     // not mounted yet, or the element was unmounted (e.g. by v-if)
   }
@@ -71,7 +71,7 @@ function genRandom(){
 
 }
 function getSrc(accessory,style){
-    return '/alpaca/'+accessory+'/'+style+'.png'
+    return store.url.developement+'/alpaca/'+accessory+'/'+style+'.png'
 }
 function setSrc(url){
     switch (store.currentAccessory) {
