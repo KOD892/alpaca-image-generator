@@ -20,7 +20,7 @@ watchEffect(() => {
   if (neck.value) {
      let url = getSrc(store.currentAccessory,store.currentStyle);
      mergedSrc.value = merged.value.src;
-     setSrc(url);
+     setSrc('/src/assets'+url);
   } else {
     // not mounted yet, or the element was unmounted (e.g. by v-if)
   }
@@ -71,7 +71,7 @@ function genRandom(){
 
 }
 function getSrc(accessory,style){
-    return '/src/assets/alpaca/'+accessory+'/'+style+'.png'
+    return '/alpaca/'+accessory+'/'+style+'.png'
 }
 function setSrc(url){
     switch (store.currentAccessory) {
@@ -118,15 +118,15 @@ function dataURItoBlob(dataURI) {
 <template>
     <div class="main">
       <div ref="image" class="img">
-        <img ref="bg" src="../assets/alpaca/backgrounds/darkblue50.png" id="backgrounds" alt="">
-        <img ref="leg" src="../assets/alpaca/leg/default.png" id="leg" alt="">
-        <img ref="neck" src="../assets/alpaca/neck/default.png" id="neck" alt="">
-        <img ref="ears" src="../assets/alpaca/ears/default.png" id="ears" alt="">
-        <img ref="hair" src="../assets/alpaca/hair/default.png" id="hair" alt="">
-        <img ref="nose" src="../assets/alpaca/nose.png" alt="">
-        <img ref="eyes" src="../assets//alpaca/eyes/default.png" id="eyes" alt="">
-        <img ref="mouth" src="../assets//alpaca/mouth/default.png" id="mouth" alt="">
-        <img ref="accessory" src="../assets/alpaca/accessories/earings.png" id="accessories" alt="">
+        <img ref="bg" src="@/assets/alpaca/backgrounds/darkblue50.png" id="backgrounds" alt="">
+        <img ref="leg" src="@/assets/alpaca/leg/default.png" id="leg" alt="">
+        <img ref="neck" src="@/assets/alpaca/neck/default.png" id="neck" alt="">
+        <img ref="ears" src="@/assets/alpaca/ears/default.png" id="ears" alt="">
+        <img ref="hair" src="@/assets/alpaca/hair/default.png" id="hair" alt="hair">
+        <img ref="nose" src="@/assets/alpaca/nose.png" alt="">
+        <img ref="eyes" src="@/assets//alpaca/eyes/default.png" id="eyes" alt="">
+        <img ref="mouth" src="@/assets//alpaca/mouth/default.png" id="mouth" alt="">
+        <img ref="accessory" src="@/assets/alpaca/accessories/earings.png" id="accessories" alt="">
       </div>  
     </div>
     <img ref="merged" id="merged"/>
