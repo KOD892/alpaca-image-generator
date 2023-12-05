@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue';
-export const useAlpacaStore = defineStore('alpaca',{
-  
+export const useAlpacaStore = defineStore('alpaca',{  
 state: ()=>({
     accessories: {
       hair:['default','bang','curls','elegant','fancy','quiff','short'],
@@ -13,10 +12,7 @@ state: ()=>({
       accessories:['earings','flower','glasses','headphone'],
       backgrounds:['blue50','blue60','blue70','darkblue30','darkblue70','darkblue50','green50','green60','green70','grey40','grey70','grey80','red50','red60','red70','yellow50','yellow60','yellow70']
     },
-    url:{
-      developement:'/src/assets',
-      production:'/assets'
-    },
+    url:import.meta.env.VITE_IMG_URL_PROD,
     currentAccessory:ref('hair'),
     currentStyle:ref('default')
 
@@ -43,7 +39,7 @@ actions:{
     let keys = Object.keys(this.accessories)
     keys.forEach(k=>{
        if(el.id==k){
-        el.src = this.url.production+'/alpaca/'+k+'/'+this.accessories[k][Math.floor(Math.random()*this.accessories[k].length)]+'.png'
+        el.src = this.url+'/alpaca/'+k+'/'+this.accessories[k][Math.floor(Math.random()*this.accessories[k].length)]+'.png'
       }   
     })
   }

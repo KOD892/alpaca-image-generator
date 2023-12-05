@@ -3,6 +3,7 @@ import { ref, watchEffect } from 'vue';
 import { useAlpacaStore } from '../stores/alpaca';
 import mergeImages from 'merge-images';
 const store = useAlpacaStore();
+console.log(import.meta.env)
 
 const image = ref(null)
 const leg = ref(null)
@@ -71,7 +72,7 @@ function genRandom(){
 
 }
 function getSrc(accessory,style){
-    return store.url.production+'/alpaca/'+accessory+'/'+style+'.png'
+    return store.url+'/alpaca/'+accessory+'/'+style+'.png'
 }
 function setSrc(url){
     switch (store.currentAccessory) {
