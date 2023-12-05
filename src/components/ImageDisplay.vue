@@ -3,8 +3,6 @@ import { ref, watchEffect } from 'vue';
 import { useAlpacaStore } from '../stores/alpaca';
 import mergeImages from 'merge-images';
 const store = useAlpacaStore();
-console.log(import.meta.env)
-
 const image = ref(null)
 const leg = ref(null)
 const neck = ref(null);
